@@ -16,18 +16,21 @@ const auth = getAuth(app);
 const analytics = getAnalytics(app);
 //یہاں سے اوپر خطرہ ہے اوپر والے کوڈ کو نہیں چھیڑنا
 // یہاں سے نیچے لیگوئج باکس کا کوڈ شروع ہو رہا ہے
+// گوگل ٹرانسلیٹ کو متحرک کرنے کا فنکشن
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'en', 
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
 }
 
-// سرچ کو بہتر بنانے اور ڈراپ ڈاؤن کو کنٹرول کرنے کے لیے
-document.getElementById('language-box').addEventListener('click', function() {
+// آپ کی CSS والی آئی ڈی 'lang-box' یہاں استعمال کریں
+document.getElementById('lang-box').addEventListener('click', function() {
     var googleDiv = document.querySelector('.goog-te-combo');
     if (googleDiv) {
-        googleDiv.click(); // یہ گوگل کے ڈراپ ڈاؤن کو متحرک کرے گا
+        googleDiv.click(); 
+    } else {
+        // اگر گوگل ابھی لوڈ نہیں ہوا تو یہ پیغام آئے گا
+        console.log("Google Translate is still loading...");
     }
 });
