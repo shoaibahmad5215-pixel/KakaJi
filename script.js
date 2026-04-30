@@ -16,3 +16,18 @@ const auth = getAuth(app);
 const analytics = getAnalytics(app);
 //یہاں سے اوپر خطرہ ہے اوپر والے کوڈ کو نہیں چھیڑنا
 // یہاں سے نیچے لیگوئج باکس کا کوڈ شروع ہو رہا ہے
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+// سرچ کو بہتر بنانے اور ڈراپ ڈاؤن کو کنٹرول کرنے کے لیے
+document.getElementById('language-btn').addEventListener('click', function() {
+    var googleDiv = document.querySelector('.goog-te-combo');
+    if (googleDiv) {
+        googleDiv.click(); // یہ گوگل کے ڈراپ ڈاؤن کو متحرک کرے گا
+    }
+});
