@@ -25,7 +25,7 @@ function googleTranslateElementInit() {
 }
 
 // سرچ کو بہتر بنانے اور ڈراپ ڈاؤن کو کنٹرول کرنے کے لیے
-document.getElementById('language-btn').addEventListener('click', function() {
+document.getElementById('language-box').addEventListener('click', function() {
     var googleDiv = document.querySelector('.goog-te-combo');
     if (googleDiv) {
         googleDiv.click(); // یہ گوگل کے ڈراپ ڈاؤن کو متحرک کرے گا
